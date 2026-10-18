@@ -32,6 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.remove('active');
       });
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('active');
+      }
+    });
   }
 
   // --- 3. Audience Tab Switcher (Students vs Techies) ---

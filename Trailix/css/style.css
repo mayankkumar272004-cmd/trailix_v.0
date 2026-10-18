@@ -88,11 +88,15 @@ html {
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: var(--bg-primary);
 }
@@ -2044,17 +2048,52 @@ button, input, select {
 }
 
 @media (max-width: 768px) {
+  /* Container & Section Spacing */
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding: 2.2rem 0 3.2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.2rem);
+    line-height: 1.22;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Header & Navigation */
+  .site-header {
+    padding: 0.7rem 0;
+  }
+
+  .logo-img {
+    height: 42px;
+  }
+
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
     background: #FFFFFF;
     border-bottom: 1px solid var(--border-card);
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.5rem 2rem;
     flex-direction: column;
     display: none;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 30px rgba(36, 59, 107, 0.12);
+    z-index: 99;
   }
   
   .nav-menu.active {
@@ -2063,9 +2102,14 @@ button, input, select {
   
   .nav-list {
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.2rem;
     align-items: flex-start;
     width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    font-weight: 600;
   }
   
   .mobile-cta-wrapper {
@@ -2087,8 +2131,161 @@ button, input, select {
     display: flex;
   }
 
-  .modes-grid {
-    grid-template-columns: 1fr;
+  /* Decorative Clouds on Mobile */
+  .cloud-shape {
+    opacity: 0.5;
+  }
+  .cloud-top-right {
+    width: 200px;
+    height: 160px;
+    right: -60px;
+  }
+  .cloud-mid-left {
+    width: 180px;
+    height: 180px;
+    left: -70px;
+  }
+  .cloud-bottom-right {
+    width: 220px;
+    height: 180px;
+    right: -80px;
+  }
+
+  /* Hero Section */
+  .pill-badge {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.9rem;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6.8vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+  }
+
+  /* Hero Stats: 3 Columns Grid Without Dividers */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--border-card);
+    text-align: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-item {
+    align-items: center;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  /* App Screen Showcase Card */
+  .app-screen-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .overlap-display-stage {
+    padding: 2rem 1rem;
+    min-height: 210px;
+  }
+
+  .venn-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .circle-you {
+    margin-right: -20px;
+  }
+
+  .circle-riya {
+    margin-left: -20px;
+  }
+
+  .overlap-starburst {
+    width: 66px;
+    height: 66px;
+  }
+
+  .overlap-percentage {
+    font-size: 1.05rem;
+  }
+
+  .overlap-subtext {
+    font-size: 0.58rem;
+  }
+
+  .app-screen-headline {
+    font-size: 1.4rem;
+  }
+
+  .app-screen-subtext {
+    font-size: 0.9rem;
+  }
+
+  .hero-planner-preview {
+    padding: 0.95rem;
+  }
+
+  .planner-trip-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  /* Audience Switcher Tabs */
+  .audience-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    padding: 0.35rem;
+    box-sizing: border-box;
+    margin-top: 1.6rem;
+  }
+
+  .audience-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 0.65rem 0.6rem;
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .audience-content {
+    margin-top: 2.2rem;
   }
 
   .audience-grid,
@@ -2096,32 +2293,192 @@ button, input, select {
   .testimonials-grid,
   .steps-flow {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .audience-card,
+  .feature-card,
+  .step-card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  /* Travel Modes */
+  .modes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.2rem;
+  }
+
+  .mode-card {
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .mode-badge {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .mode-title {
+    font-size: 1.4rem;
+  }
+
+  .mode-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Safety Section */
+  .safety-box {
+    padding: 2rem 1.4rem;
+    gap: 2rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .safety-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .safety-features-list {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .badge-card {
+    padding: 1.6rem 1.3rem;
+  }
+
+  /* Smart Itinerary & Economics Planner */
+  .calculator-card {
+    padding: 2rem 1.35rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .calc-header .section-subtitle {
+    margin-bottom: 1.8rem;
   }
 
   .planner-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 1.8rem;
+  }
+
+  .planner-inputs-col {
+    gap: 1.4rem;
   }
 
   .companion-selector {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .companion-btn {
+    padding: 0.85rem 1rem;
   }
 
   .itinerary-generated-card {
-    padding: 1.5rem;
+    padding: 1.6rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .itinerary-header h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Price Row in Planner */
+  .price-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 0.4rem 0;
+  }
+
+  .price-col {
+    align-items: center;
+  }
+
+  .price-arrow {
+    transform: rotate(90deg);
+    margin: -0.1rem auto;
+  }
+
+  .price-number {
+    font-size: 1.75rem;
+  }
+
+  .savings-tag {
+    margin: 0.35rem auto 0;
+  }
+
+  /* FAQ Section */
+  .faq-accordion {
+    margin-top: 2.2rem;
+    gap: 0.85rem;
+  }
+
+  .faq-question {
+    padding: 1.15rem 1.25rem;
+    font-size: 0.98rem;
+    gap: 0.75rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding-bottom: 1.25rem;
+  }
+
+  /* Waitlist Section */
+  .waitlist-card {
+    padding: 2.5rem 1.35rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .waitlist-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .waitlist-sub {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
   }
 
   .form-inputs {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 
-  .safety-features-list {
-    grid-template-columns: 1fr;
+  .form-inputs input {
+    padding: 0.85rem 1rem;
+  }
+
+  .role-selector {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .role-radio {
+    background: #FFFFFF;
+    border: 1px solid var(--border-card);
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 3.5rem 0 2rem;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .footer-bottom {
@@ -2129,22 +2486,145 @@ button, input, select {
     gap: 1rem;
     text-align: center;
   }
+}
 
-  .app-screen-card {
-    padding: 1.5rem;
+/* Extra Compact Phones (iPhone SE, Galaxy A series, 320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
   }
-  
+
+  .section {
+    padding: 2.8rem 0;
+  }
+
+  .hero-section {
+    padding: 1.8rem 0 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-stats {
+    gap: 0.4rem;
+  }
+
+  .stat-number {
+    font-size: 1.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  /* Scaled Venn Diagram for ultra-small phones */
+  .overlap-display-stage {
+    padding: 1.5rem 0.5rem;
+    min-height: 190px;
+  }
+
   .venn-circle {
-    width: 110px;
-    height: 110px;
+    width: 94px;
+    height: 94px;
   }
-  
+
+  .circle-you {
+    margin-right: -14px;
+  }
+
+  .circle-riya {
+    margin-left: -14px;
+  }
+
+  .venn-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .venn-label {
+    font-size: 0.78rem;
+  }
+
   .overlap-starburst {
-    width: 66px;
-    height: 66px;
+    width: 58px;
+    height: 58px;
   }
-  
+
   .overlap-percentage {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .overlap-subtext {
+    font-size: 0.52rem;
+  }
+
+  .app-screen-headline {
+    font-size: 1.25rem;
+  }
+
+  /* Audience Switcher on tiny screens */
+  .audience-tab {
+    padding: 0.55rem 0.35rem;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+  }
+
+  .audience-tab svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  /* Cards Padding */
+  .audience-card,
+  .feature-card,
+  .step-card,
+  .mode-card,
+  .safety-box,
+  .calculator-card,
+  .waitlist-card {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .planner-chip-group {
+    gap: 0.45rem;
+  }
+
+  .plan-chip {
+    padding: 0.48rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .itinerary-generated-card {
+    padding: 1.25rem 0.95rem;
+  }
+
+  .timeline-item {
+    padding: 0.65rem 0.85rem;
+    gap: 0.65rem;
+  }
+
+  .day-badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.78rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.98rem;
   }
 }
