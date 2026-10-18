@@ -1294,7 +1294,7 @@ button, input, select {
 }
 
 /* ==========================================================================
-   CALCULATOR SECTION
+   SMART ITINERARY & ECONOMICS PLANNER
    ========================================================================== */
 .calculator-section {
   background: var(--bg-primary);
@@ -1305,24 +1305,130 @@ button, input, select {
   background: #FFFFFF;
 }
 
-.calc-body {
+.planner-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
   margin-top: 2.8rem;
-  align-items: center;
+  align-items: start;
 }
 
-.calc-controls {
+.planner-inputs-col {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
-.calc-controls label {
-  font-weight: 600;
-  font-size: 1rem;
+.planner-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.control-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--text-primary);
+}
+
+.control-label svg {
+  stroke: var(--brand-navy);
+}
+
+.planner-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.plan-chip {
+  background: var(--bg-card-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.plan-chip:hover {
+  border-color: var(--border-card-hover);
+  color: var(--brand-navy);
+}
+
+.plan-chip.active {
+  background: var(--brand-navy);
+  border-color: var(--brand-navy);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(36, 59, 107, 0.2);
+}
+
+/* Companion Mode Selector */
+.companion-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.companion-btn {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.companion-btn .comp-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.companion-btn .comp-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.companion-btn .comp-text small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.companion-btn:hover {
+  border-color: var(--border-card-hover);
+  background: var(--bg-card-soft);
+}
+
+.companion-btn.active {
+  background: #F0F4FD;
+  border-color: var(--brand-navy);
+  box-shadow: 0 4px 14px rgba(36, 59, 107, 0.08);
+}
+
+.companion-btn.active .comp-text strong {
+  color: var(--brand-navy);
+}
+
+/* Slider Header */
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .highlight-val {
@@ -1350,90 +1456,149 @@ button, input, select {
   box-shadow: 0 0 10px rgba(36, 59, 107, 0.4);
 }
 
-.calc-presets {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem;
+/* Right: Generated Itinerary Card */
+.itinerary-generated-card {
+  background: var(--bg-card-soft);
+  border: 1px solid #DCE6F8;
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-card);
 }
 
-.preset-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.itinerary-header {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #DCE6F8;
 }
 
-.calc-btn {
-  background: var(--bg-primary);
+.itinerary-mode-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand-navy);
+  background: #FFFFFF;
   border: 1px solid var(--border-card);
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.8rem;
-  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.6rem;
+}
+
+.itinerary-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.itinerary-header p {
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  line-height: 1.5;
 }
 
-.calc-btn.active {
-  background: var(--brand-navy);
-  border-color: var(--brand-navy);
+/* Timeline */
+.itinerary-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.6rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-card);
+}
+
+.day-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
   color: #FFFFFF;
+  background: var(--brand-navy);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 
-.calc-results {
+.timeline-item p {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Pricing box */
+.itinerary-pricing-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.price-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  background: var(--bg-card-soft);
-  border: 1px solid var(--border-card);
-  padding: 2rem;
-  border-radius: var(--radius-lg);
+  gap: 0.8rem;
 }
 
-.result-box {
+.price-col {
   display: flex;
   flex-direction: column;
 }
 
-.result-label {
-  font-size: 0.8rem;
+.price-caption {
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.25rem;
 }
 
-.result-price {
+.price-number {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--text-primary);
+  line-height: 1.15;
 }
 
-.result-box.shared .result-price {
+.price-number.shared {
   color: var(--brand-navy);
 }
 
-.result-note {
-  font-size: 0.75rem;
+.price-note {
+  font-size: 0.7rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
+}
+
+.price-arrow {
+  color: var(--brand-navy);
 }
 
 .savings-tag {
   display: inline-block;
-  margin-top: 0.4rem;
+  margin-top: 0.25rem;
   font-size: 0.75rem;
   font-weight: 700;
   color: #10B981;
   background: #E8F8F0;
-  padding: 0.2rem 0.6rem;
+  padding: 0.15rem 0.55rem;
   border-radius: var(--radius-sm);
+  width: fit-content;
 }
 
-.result-arrow {
-  color: var(--brand-navy);
+.plan-cta-btn {
+  font-size: 0.95rem;
+  padding: 0.8rem 1.4rem;
 }
 
 /* ==========================================================================
@@ -1933,19 +2098,17 @@ button, input, select {
     grid-template-columns: 1fr;
   }
 
-  .calc-body {
+  .planner-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .calc-results {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
+  .companion-selector {
+    grid-template-columns: 1fr;
   }
 
-  .result-arrow {
-    transform: rotate(90deg);
+  .itinerary-generated-card {
+    padding: 1.5rem;
   }
 
   .form-inputs {

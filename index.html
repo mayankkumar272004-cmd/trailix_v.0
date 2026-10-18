@@ -517,47 +517,147 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE SAVINGS CALCULATOR / ESTIMATOR -->
-    <section class="section calculator-section">
+    <!-- SMART ITINERARY & SAVINGS PLANNER -->
+    <section class="section calculator-section" id="planner">
       <div class="container">
         <div class="calculator-card glass-panel">
+          
           <div class="calc-header text-center">
-            <span class="section-tag">Smart Economics</span>
-            <h2 class="section-title">See How Much You Save By Co-Traveling</h2>
-            <p class="section-subtitle">Traveling solo adds up fast. See your estimated budget when matched on Trailix.</p>
+            <span class="section-tag">Smart Economics & Planner</span>
+            <h2 class="section-title">Tell Us Your Destination, Time & Budget — We Build The Itinerary</h2>
+            <p class="section-subtitle">
+              Choose whether you want to match with unknown explorers heading the same way or plan seamlessly with your friends & family.
+            </p>
           </div>
 
-          <div class="calc-body">
-            <div class="calc-controls">
-              <label for="travelersRange">Number of Co-Travelers Sharing (including you): <span id="travelersCount" class="highlight-val">4 Travelers</span></label>
-              <input type="range" id="travelersRange" min="2" max="6" value="4" class="slider">
-
-              <div class="calc-presets">
-                <span class="preset-label">Trip Type:</span>
-                <button class="calc-btn active" data-base="12000">Weekend Getaway (₹12,000)</button>
-                <button class="calc-btn" data-base="24000">5-Day Expedition (₹24,000)</button>
-                <button class="calc-btn" data-base="40000">Week-Long Workation (₹40,000)</button>
+          <div class="planner-grid">
+            
+            <!-- LEFT: USER INPUTS (Destination, Time, Budget, Companion Mode) -->
+            <div class="planner-inputs-col">
+              
+              <!-- 1. Destination -->
+              <div class="planner-control-group">
+                <label class="control-label">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>1. Choose Destination:</span>
+                </label>
+                <div class="planner-chip-group" id="destChips">
+                  <button type="button" class="plan-chip active" data-dest="manali">🏔️ Manali</button>
+                  <button type="button" class="plan-chip" data-dest="goa">🏖️ Goa</button>
+                  <button type="button" class="plan-chip" data-dest="rishikesh">🛶 Rishikesh</button>
+                  <button type="button" class="plan-chip" data-dest="spiti">🚙 Spiti Trek</button>
+                </div>
               </div>
+
+              <!-- 2. Time & Duration -->
+              <div class="planner-control-group">
+                <label class="control-label">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>2. Time & Duration:</span>
+                </label>
+                <div class="planner-chip-group" id="timeChips">
+                  <button type="button" class="plan-chip active" data-days="3">Weekend (3 Days)</button>
+                  <button type="button" class="plan-chip" data-days="5">Expedition (5 Days)</button>
+                  <button type="button" class="plan-chip" data-days="7">Workation (7 Days)</button>
+                </div>
+              </div>
+
+              <!-- 3. Who Are You Traveling With? (Dual Option) -->
+              <div class="planner-control-group">
+                <label class="control-label">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>3. Who Are You Traveling With?</span>
+                </label>
+                <div class="companion-selector" id="companionSelector">
+                  <button type="button" class="companion-btn active" data-companion="unknown">
+                    <span class="comp-icon">🧭</span>
+                    <div class="comp-text">
+                      <strong>Go With Unknowns</strong>
+                      <small>Match with verified travelers heading the same way</small>
+                    </div>
+                  </button>
+                  <button type="button" class="companion-btn" data-companion="known">
+                    <span class="comp-icon">👥</span>
+                    <div class="comp-text">
+                      <strong>Friends & Family</strong>
+                      <small>Private squad plan & auto-split expenses</small>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 4. Group Size / Travelers Sharing Cost -->
+              <div class="planner-control-group">
+                <div class="slider-header">
+                  <label for="travelersRange">Group Size Sharing Stays & Cabs:</label>
+                  <span id="travelersCount" class="highlight-val">4 Travelers</span>
+                </div>
+                <input type="range" id="travelersRange" min="2" max="6" value="4" class="slider">
+              </div>
+
             </div>
 
-            <div class="calc-results">
-              <div class="result-box solo">
-                <span class="result-label">Solo Total Cost</span>
-                <span class="result-price" id="soloCostDisplay">₹12,000</span>
-                <span class="result-note">You pay for cab, stay & fuel alone</span>
+            <!-- RIGHT: GENERATED ITINERARY & ECONOMICS CARD -->
+            <div class="planner-preview-col">
+              
+              <div class="itinerary-generated-card">
+                
+                <div class="itinerary-header">
+                  <span class="itinerary-mode-pill" id="itineraryModeBadge">
+                    🧭 Matching Verified Explorers (60%+ Overlap)
+                  </span>
+                  <h3 id="itineraryTitle">Manali Weekend Getaway (3 Days)</h3>
+                  <p id="itineraryDesc">Custom planned for co-travelers with identical dates & budget, meeting at verified departure hub.</p>
+                </div>
+
+                <!-- Daily Breakdown highlights -->
+                <div class="itinerary-timeline" id="itineraryTimeline">
+                  <div class="timeline-item">
+                    <span class="day-badge">Day 1</span>
+                    <p>Meet at verified departure hub, scenic valley drive & check-in to shared mountain stay.</p>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="day-badge">Day 2</span>
+                    <p>Solang Valley snow trek, local cafe hopping & evening group bonfire unwinding.</p>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="day-badge">Day 3</span>
+                    <p>Old Manali market exploration, automated expense settlement & journey back.</p>
+                  </div>
+                </div>
+
+                <!-- Economics & Savings Results -->
+                <div class="itinerary-pricing-box">
+                  <div class="price-row">
+                    <div class="price-col">
+                      <span class="price-caption">Solo Total Cost</span>
+                      <span class="price-number solo" id="soloCostDisplay">₹12,000</span>
+                      <span class="price-note">Solo stay, cab & fuel</span>
+                    </div>
+
+                    <div class="price-arrow">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+
+                    <div class="price-col">
+                      <span class="price-caption">Your Share on Trailix</span>
+                      <span class="price-number shared" id="sharedCostDisplay">₹3,000</span>
+                      <span class="savings-tag" id="savingsTag">You Save ₹9,000 (75%)</span>
+                    </div>
+                  </div>
+
+                  <a href="#waitlist" class="btn btn-primary btn-block plan-cta-btn" id="planCtaBtn">
+                    <span>Find Co-Travelers For This Trip</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+
               </div>
 
-              <div class="result-arrow">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </div>
-
-              <div class="result-box shared">
-                <span class="result-label">Your Share on Trailix</span>
-                <span class="result-price" id="sharedCostDisplay">₹3,000</span>
-                <span class="savings-tag" id="savingsTag">You Save ₹9,000 (75%)</span>
-              </div>
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
