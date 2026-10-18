@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trailix — Match Itineraries, Split Costs & Travel Together</title>
+  <meta name="description" content="Trailix matches your travel itinerary with verified co-travelers who share your destination, dates, and budget. Ideal for students, tech professionals, and groups.">
+  <meta name="keywords" content="travel buddy, itinerary matching, trip planner, split trip cost, student travel, tech workation">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- App Theme Organic Clouds & Floating Dots -->
+  <div class="cloud-shape cloud-top-right"></div>
+  <div class="cloud-shape cloud-mid-left"></div>
+  <div class="cloud-shape cloud-bottom-right"></div>
+  <div class="decor-dot coral dot-hero-1"></div>
+  <div class="decor-dot navy dot-hero-2"></div>
+  <div class="decor-dot coral dot-hero-3"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="Trailix Home">
+        <img src="assets/logo.jpeg" alt="Trailix — Meet, Plan, Collaborate, Explore" class="logo-img" id="mainLogo">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#audiences" class="nav-link">Students & Techies</a></li>
+          <li><a href="#modes" class="nav-link">Travel Modes</a></li>
+          <li><a href="#safety" class="nav-link">Safety First</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+        <div class="mobile-cta-wrapper">
+          <a href="#waitlist" class="btn btn-primary btn-sm mobile-cta">Join Early Access</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#waitlist" class="btn btn-primary header-cta">Join Early Access</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <div class="pill-badge">
+            <span class="pulse-dot"></span>
+            <span>Early Access Open • App & Web Coming Soon</span>
+          </div>
+
+          <h1 class="hero-title">
+            Plan the Trip. <br>
+            <span class="gradient-text">We Match the Overlap.</span> <br>
+            Explore Together.
+          </h1>
+
+          <p class="hero-description">
+            Trailix connects you with verified co-travelers who share your exact destination, dates, and budget. When your itineraries match 60% or more, you both get matched—or easily plan private trips with friends & family.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="hero-buttons">
+            <a href="#waitlist" class="btn btn-primary btn-lg">
+              <span>Claim Free Early Access</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn btn-outline btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>See How It Works</span>
+            </a>
+          </div>
+
+          <!-- Social Proof / Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">ID Verified Profiles</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">60%+</span>
+              <span class="stat-label">Min. Itinerary Overlap</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">₹0</span>
+              <span class="stat-label">Awkward Planning Talks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO APP SCREEN SHOWCASE (Direct recreation from the Trailix App) -->
+        <div class="hero-visual">
+          <div class="app-screen-card">
+            
+            <div class="app-screen-header">
+              <span class="app-screen-time">9:41</span>
+              <a href="#waitlist" class="app-screen-skip">Skip</a>
+            </div>
+
+            <!-- Overlap Stage with Venn Diagram & Starburst Badge -->
+            <div class="overlap-display-stage">
+              <div class="star-glow-bg"></div>
+
+              <div class="venn-container">
+                <!-- You Circle -->
+                <div class="venn-circle circle-you">
+                  <div class="venn-avatar">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
+                  <span class="venn-label">You</span>
+                </div>
+
+                <!-- Starburst Overlap Badge -->
+                <div class="overlap-starburst" id="overlapBadge">
+                  <span class="overlap-percentage" id="overlapPercentage">72%</span>
+                  <span class="overlap-subtext">overlap</span>
+                </div>
+
+                <!-- Riya Circle -->
+                <div class="venn-circle circle-riya">
+                  <div class="venn-avatar peach">R</div>
+                  <span class="venn-label">Riya</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- App Screen Content -->
+            <div class="app-screen-content">
+              <h3 class="app-screen-headline">We match the overlap</h3>
+              <p class="app-screen-subtext">When your itineraries match 60% or more, you both get the match.</p>
+
+              <!-- App Screen Footer Stepper & Next Button -->
+              <div class="app-screen-footer">
+                <div class="stepper-dots">
+                  <span class="step-pill"></span>
+                  <span class="step-dot"></span>
+                  <span class="step-dot"></span>
+                </div>
+                <a href="#waitlist" class="btn-app-next">
+                  <span>Next</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Live Interactive Trip Matcher Toggle inside Card -->
+            <div class="hero-planner-preview">
+              <div class="planner-toggle-row">
+                <button class="chip active" data-mode="match">Match Travel Buddies</button>
+                <button class="chip" data-mode="friends">Friends & Family</button>
+              </div>
+              <div class="planner-trip-summary" id="plannerSummary">
+                <span>📍 Manali, Himalayas • Oct 24-28</span>
+                <strong>₹4,500 budget</strong>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AUDIENCES: STUDENTS VS TECH PROFESSIONALS -->
+    <section class="section audience-section" id="audiences">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Designed For You</span>
+          <h2 class="section-title">Built For The Modern Adventurer</h2>
+          <p class="section-subtitle">
+            Whether your priority is saving every rupee on a semester break or escaping the sprint backlog with fast WiFi, Trailix tailors your journey.
+          </p>
+
+          <!-- Switcher Buttons -->
+          <div class="audience-tabs" role="tablist">
+            <button class="audience-tab active" id="tabStudents" role="tab" aria-selected="true" data-target="content-students">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>For College Students</span>
+            </button>
+            <button class="audience-tab" id="tabTechies" role="tab" aria-selected="false" data-target="content-techies">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>For Tech Professionals</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Content 1: Students -->
+        <div class="audience-content active" id="content-students">
+          <div class="audience-grid">
+            <div class="audience-card">
+              <div class="icon-box green">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="18" x2="12" y2="20"/><line x1="12" y1="4" x2="12" y2="6"/></svg>
+              </div>
+              <h3>Budget-First Travel</h3>
+              <p>Split rental vehicles, shared homestays, and hostel dorms. Turn a ₹8,000 solo trip into a ₹2,500 squad adventure.</p>
+            </div>
+
+            <div class="audience-card">
+              <div class="icon-box cyan">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Campus-Verified Circles</h3>
+              <p>Filter companion searches to students from your university, neighboring colleges, or verified student IDs.</p>
+            </div>
+
+            <div class="audience-card">
+              <div class="icon-box blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>Unplanned Weekend Treks</h3>
+              <p>When friends back out last minute, don't cancel! Find travelers already packed and ready at your city's departure hub.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content 2: Tech Professionals -->
+        <div class="audience-content" id="content-techies">
+          <div class="audience-grid">
+            <div class="audience-card">
+              <div class="icon-box blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </div>
+              <h3>Workation Ready</h3>
+              <p>Discover co-travelers who also need high-speed WiFi, ergonomic setups, quiet morning hours, and evening bonfire unwinding.</p>
+            </div>
+
+            <div class="audience-card">
+              <div class="icon-box cyan">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/><circle cx="8" cy="12" r="2"/></svg>
+              </div>
+              <h3>Network While You Explore</h3>
+              <p>Connect with founders, engineers, designers, and creators heading toward the same hills, beaches, or heritage trails.</p>
+            </div>
+
+            <div class="audience-card">
+              <div class="icon-box green">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3>Zero-Hassle Weekend Escapes</h3>
+              <p>After a 60-hour work week, skip days of agonizing coordination. Select your departure Friday evening, join an itinerary, and pack.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DUAL MODES: STRANGERS OR SQUAD -->
+    <section class="section modes-section" id="modes">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Total Flexibility</span>
+          <h2 class="section-title">One App. Two Powerful Travel Modes.</h2>
+          <p class="section-subtitle">You have total control over who you travel with. Choose the mode that fits your journey.</p>
+        </div>
+
+        <div class="modes-grid">
+          <!-- Mode 1 -->
+          <div class="mode-card glass-panel">
+            <div class="mode-badge highlight">Mode 01</div>
+            <div class="mode-icon-circle">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            </div>
+            <h3 class="mode-title">Match With Co-Travelers</h3>
+            <p class="mode-desc">Got a destination in mind but no one to go with? Put your dates and budget into Trailix. We match you with verified travelers going to the exact same spots.</p>
+            <ul class="mode-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Automated itinerary & budget compatibility match</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Safe pre-trip chat & compatibility questionnaires</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Verified public meeting hubs</li>
+            </ul>
+          </div>
+
+          <!-- Mode 2 -->
+          <div class="mode-card glass-panel">
+            <div class="mode-badge">Mode 02</div>
+            <div class="mode-icon-circle">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="mode-title">Friends & Family Squad</h3>
+            <p class="mode-desc">Already have your group? Use Trailix as your private squad command center to build joint schedules, poll activity options, and split every rupee or dollar seamlessly.</p>
+            <ul class="mode-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Private group invites via link or QR code</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Collaborative itinerary planning & voting</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> In-app expense ledger with settlement reminders</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how-section" id="how-it-works">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Simple 4-Step Process</span>
+          <h2 class="section-title">How Trailix Works</h2>
+          <p class="section-subtitle">From solo dreamer to embarking on the highway with like-minded friends in minutes.</p>
+        </div>
+
+        <div class="steps-flow">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <h4>Input Your Itinerary</h4>
+            <p>Tell Trailix where you want to go, your travel dates, target budget, and convenient departure meeting point.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Get Compatibility Matches</h4>
+            <p>Our smart matching engine pairs you with verified users heading the same way who fit your pace, interests, and budget.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h4>Vibe Check & Confirm</h4>
+            <p>Chat inside the secure pre-trip group lounge, review verified badges and mutual reviews, and agree on the plan.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4>Meet, Travel & Split</h4>
+            <p>Meet at the verified rendezvous spot, hit the trail, and let Trailix automatically split fuel, food, and stays.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SAFETY & TRUST SECTION -->
+    <section class="section safety-section" id="safety">
+      <div class="container">
+        
+        <div class="safety-box glass-panel">
+          <div class="safety-content">
+            <span class="section-tag alert">Safety Is Our Bedrock</span>
+            <h2 class="section-title">Traveling With New People Should Feel Thrilling, Never Risky.</h2>
+            <p class="safety-subtext">
+              We know meeting unfamiliar people to travel can raise questions. That’s why Trailix is engineered with multi-layered safety protocols before anyone ever steps foot on the trail.
+            </p>
+
+            <div class="safety-features-list">
+              <div class="safety-feature-item">
+                <div class="safety-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <h4>100% Verified Identity</h4>
+                  <p>Mandatory government ID verification, phone number authentication, and optional campus/work email checks.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                </div>
+                <div>
+                  <h4>Safe Meeting Hubs</h4>
+                  <p>Matches meet at verified transit centers, metro junctions, airport lounges, or verified traveler hostels.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                  <h4>Two-Way Peer Reviews</h4>
+                  <p>Travelers earn reputation scores and verified badges for punctuality, respectfulness, and cleanliness after every trip.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div>
+                  <h4>24/7 SOS & Live Tracking</h4>
+                  <p>Share your live itinerary and real-time GPS coordinates directly with family or emergency contacts at the tap of a button.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety Graphic Card -->
+          <div class="safety-graphic">
+            <div class="badge-card">
+              <div class="badge-header">
+                <span class="badge-shield">🛡️</span>
+                <div>
+                  <strong>Trailix Trust Shield</strong>
+                  <p>Verification Passed</p>
+                </div>
+              </div>
+              <ul class="badge-checks">
+                <li><span class="check-icon">✓</span> Govt. Photo ID Validated</li>
+                <li><span class="check-icon">✓</span> College / Corporate Domain Checked</li>
+                <li><span class="check-icon">✓</span> Emergency Contact Linked</li>
+                <li><span class="check-icon">✓</span> Community Guidelines Signed</li>
+              </ul>
+              <div class="shield-footer">
+                <span>Trust Score: <strong>99.4/100</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KEY FEATURES GRID -->
+    <section class="section features-section" id="features">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">All-In-One Solution</span>
+          <h2 class="section-title">Everything You Need For The Perfect Journey</h2>
+          <p class="section-subtitle">No more toggling between 5 different chat apps, spreadsheets, and payment splitters.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Itinerary Synchronizer</h3>
+            <p>Matches users based on overlapping destinations, departure windows, and activity wishlists.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Integrated Expense Splitter</h3>
+            <p>Log petrol, meals, and booking receipts on the go. Instant settlement calculations with zero friction.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Meeting Point Navigator</h3>
+            <p>Select convenient meeting spots (airport gates, highway toll hubs, central stations) with live ETA tracking.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Squad & Family Mode</h3>
+            <p>Keep your trip private when traveling with family, cousins, or friends while enjoying all planning tools.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Mobile & Web Sync</h3>
+            <p>Plan in depth on your laptop at work or college, then track your live itinerary on your mobile phone on the road.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Vibe & Habit Check</h3>
+            <p>Are you an early morning trekker or night owl? Moderate walker or thrill seeker? Match with people who match your energy.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SAVINGS CALCULATOR / ESTIMATOR -->
+    <section class="section calculator-section">
+      <div class="container">
+        <div class="calculator-card glass-panel">
+          <div class="calc-header text-center">
+            <span class="section-tag">Smart Economics</span>
+            <h2 class="section-title">See How Much You Save By Co-Traveling</h2>
+            <p class="section-subtitle">Traveling solo adds up fast. See your estimated budget when matched on Trailix.</p>
+          </div>
+
+          <div class="calc-body">
+            <div class="calc-controls">
+              <label for="travelersRange">Number of Co-Travelers Sharing (including you): <span id="travelersCount" class="highlight-val">4 Travelers</span></label>
+              <input type="range" id="travelersRange" min="2" max="6" value="4" class="slider">
+
+              <div class="calc-presets">
+                <span class="preset-label">Trip Type:</span>
+                <button class="calc-btn active" data-base="12000">Weekend Getaway (₹12,000)</button>
+                <button class="calc-btn" data-base="24000">5-Day Expedition (₹24,000)</button>
+                <button class="calc-btn" data-base="40000">Week-Long Workation (₹40,000)</button>
+              </div>
+            </div>
+
+            <div class="calc-results">
+              <div class="result-box solo">
+                <span class="result-label">Solo Total Cost</span>
+                <span class="result-price" id="soloCostDisplay">₹12,000</span>
+                <span class="result-note">You pay for cab, stay & fuel alone</span>
+              </div>
+
+              <div class="result-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+
+              <div class="result-box shared">
+                <span class="result-label">Your Share on Trailix</span>
+                <span class="result-price" id="sharedCostDisplay">₹3,000</span>
+                <span class="savings-tag" id="savingsTag">You Save ₹9,000 (75%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / PILOT STORIES -->
+    <section class="section testimonials-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Community Experiences</span>
+          <h2 class="section-title">Loved by Students & Engineers Alike</h2>
+          <p class="section-subtitle">Real pilot users who transformed their solo weekend wanderlust into unforgettable memories.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Story 1 -->
+          <div class="testimonial-card glass-panel">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"My college friends all cancelled on our Spiti Valley trek at the eleventh hour. On Trailix, I matched with three other engineering students with the exact same itinerary. We split a 4x4 vehicle and saved ₹6,500 each!"</p>
+            <div class="user-meta">
+              <div class="user-avatar u1">RS</div>
+              <div>
+                <strong>Rohan Sharma</strong>
+                <span>Final Year CS Student, Delhi</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="testimonial-card glass-panel">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"I work remotely as a backend engineer and wanted a 4-day workation in Goa with good WiFi. Trailix paired me with a UX designer and another developer. We worked quietly during the day and explored beaches together by evening."</p>
+            <div class="user-meta">
+              <div class="user-avatar u2">TD</div>
+              <div>
+                <strong>Tanvi Deshmukh</strong>
+                <span>Senior Software Engineer, Bengaluru</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="testimonial-card glass-panel">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"We used the Family & Friends mode for a 7-person road trip to Rajasthan. Being able to set meeting points and have the app automatically tally who owes what for highway tolls and dinner was an absolute lifesaver."</p>
+            <div class="user-meta">
+              <div class="user-avatar u3">AK</div>
+              <div>
+                <strong>Ananya & Kunal</strong>
+                <span>Family Trip Organizers, Pune</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about traveling, matching, and safety on Trailix.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How does Trailix match me with unknown travelers?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>When you input your trip details (destination, start dates, budget, and desired departure point), our algorithm scans for verified travelers with matching itineraries. You can then review their verified profile, mutual interests, and travel style before accepting a match and chatting in a pre-trip lounge.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is it really safe to travel with someone I don't know?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Safety is our top priority. Every member must pass government photo ID verification. Students and professionals can also verify their college/work credentials. All trips originate at verified public rendezvous hubs, and our app features 24/7 SOS and real-time live location sharing with your family.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I use Trailix just with my existing friends or family?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! Trailix features a dedicated <strong>"Friends & Family Mode"</strong>. You can create a private trip, share an invite link with your group, and use all our itinerary planning, meeting coordinate sync, and automated bill-splitting features without matching strangers.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How does budget planning and expense splitting work?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>During the trip, any member can snap receipts or enter costs for fuel, tickets, food, or stays. Trailix calculates the exact splits in real time, tracks who paid what, and provides simple UPI / card settlement links at the end—no confusing math needed.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>When will Trailix be available on iOS and Android?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The beta web and mobile apps are launching soon! By joining our early access waitlist today, you'll get priority onboarding, exclusive founder badges, and access to our inaugural travel community.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WAITLIST / EARLY ACCESS CTA -->
+    <section class="section waitlist-section" id="waitlist">
+      <div class="container">
+        
+        <div class="waitlist-card glass-panel">
+          <div class="waitlist-header text-center">
+            <div class="sparkle-badge">✨ Limited Early Access Slots</div>
+            <h2 class="waitlist-title">Be The First To Experience Trailix</h2>
+            <p class="waitlist-sub">
+              Join students and tech professionals ready to explore the world together. Get early invite codes, fee-free verified badges, and invitations to pilot group treks.
+            </p>
+          </div>
+
+          <form class="waitlist-form" id="waitlistForm">
+            <div class="form-inputs">
+              <input type="text" id="userName" placeholder="Your Full Name" required>
+              <input type="email" id="userEmail" placeholder="Your College / Work Email" required>
+            </div>
+
+            <div class="form-row-role">
+              <label>I am primarily a:</label>
+              <div class="role-selector">
+                <label class="role-radio">
+                  <input type="radio" name="userRole" value="student" checked>
+                  <span>🎓 College Student</span>
+                </label>
+                <label class="role-radio">
+                  <input type="radio" name="userRole" value="professional">
+                  <span>💻 Tech Professional</span>
+                </label>
+                <label class="role-radio">
+                  <input type="radio" name="userRole" value="explorer">
+                  <span>🎒 General Explorer</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+              <span>Reserve My Early Access Spot</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <!-- Success Message State -->
+          <div class="waitlist-success" id="waitlistSuccess" style="display: none;">
+            <div class="success-icon">🎉</div>
+            <h3>You're on the priority list!</h3>
+            <p id="successMessage">Thank you for joining Trailix. We've reserved your early access badge and will send your private invite code soon.</p>
+            <button class="btn btn-outline btn-sm" id="resetWaitlistBtn">Register Another Traveler</button>
+          </div>
+
+          <div class="waitlist-trust">
+            <span>🔒 Zero spam. We protect your privacy. Cancel anytime.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo footer-logo">
+          <img src="assets/logo.jpeg" alt="Trailix — Meet, Plan, Collaborate, Explore" class="logo-img">
+        </a>
+        <p class="footer-tagline">
+          <strong>Meet • Plan • Collaborate • Explore</strong><br>
+          Smart trip planning and itinerary matching for students, tech professionals, and travelers worldwide.
+        </p>
+        <div class="footer-badges">
+          <span class="micro-badge">🚀 Made for Explorers</span>
+          <span class="micro-badge">🛡️ ID-Verified</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#audiences">For Students</a></li>
+          <li><a href="#audiences">For Techies</a></li>
+          <li><a href="#modes">Travel Modes</a></li>
+          <li><a href="#safety">Safety Protocols</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Smart Matcher</a></li>
+          <li><a href="#features">Expense Splitter</a></li>
+          <li><a href="#features">Safe Hubs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#waitlist">Early Access</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect & Safety</h4>
+        <ul>
+          <li><a href="#safety">Safety Standards</a></li>
+          <li><a href="#">Community Guidelines</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="mailto:support@trailix.com">support@trailix.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear">2026</span> Trailix Inc. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Twitter / X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
