@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburgerBtn && navMenu) {
     hamburgerBtn.addEventListener('click', () => {
-      hamburgerBtn.classList.toggle('open');
-      navMenu.classList.toggle('active');
+      const isOpen = hamburgerBtn.classList.toggle('open');
+      navMenu.classList.toggle('active', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
     });
 
     // Close menu when clicking any nav link
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('open');
         navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
       });
     });
 
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
         hamburgerBtn.classList.remove('open');
         navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
       }
     });
   }
