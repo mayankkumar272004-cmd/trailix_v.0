@@ -1,6 +1,6 @@
 /**
- * Trailix Landing Page — Interactive Scripts
- * Enhanced with Meetra Features (Outings Feed, Partner Passes, Squad Lounge Chat, GPS & Transit Pooling)
+ * Trailix Gwalior — Interactive Scripts
+ * Hyper-Localized for Gwalior (MITS, ITM, Amity, IIITM, Jiwaji, City Center)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 3. Audience Tab Switcher (Students vs Techies) ---
+  // --- 3. Audience Tab Switcher (Gwalior Students vs Techies) ---
   const tabStudents = document.getElementById('tabStudents');
   const tabTechies = document.getElementById('tabTechies');
   const contentStudents = document.getElementById('content-students');
@@ -106,18 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const mode = chip.getAttribute('data-mode');
         if (mode === 'squad') {
           if (overlapPercentage) overlapPercentage.textContent = '100%';
-          if (appScreenHeadline) appScreenHeadline.textContent = 'Squad of 4 Mode';
-          if (appScreenSubtext) appScreenSubtext.textContent = 'Pool a shared cab, split homestays 4 ways, and log group expenses effortlessly.';
-          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 Goa Road Trip • 4 Members</span><strong>₹2,800 / head (÷4 Split)</strong>';
+          if (appScreenHeadline) appScreenHeadline.textContent = 'Gwalior Squad Mode';
+          if (appScreenSubtext) appScreenSubtext.textContent = 'Pool an E-rickshaw or cab, split food bills 4 ways at Maharaj Bada, and explore Gwalior together.';
+          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 City Center & Bada Food Walk • 4 Members</span><strong>₹120 / head (÷4 Split)</strong>';
           if (vennCircleRiya) {
             vennCircleRiya.querySelector('.venn-avatar').textContent = 'S';
             vennCircleRiya.querySelector('.venn-label').textContent = 'Squad';
           }
         } else if (mode === 'solo') {
           if (overlapPercentage) overlapPercentage.textContent = 'Solo';
-          if (appScreenHeadline) appScreenHeadline.textContent = 'Solo Explorer Mode';
-          if (appScreenSubtext) appScreenSubtext.textContent = 'Plan custom routes with automated emergency contact check-ins and verified meeting points.';
-          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 Rishikesh River Trek • Solo Route</span><strong>GPS Safety Linked</strong>';
+          if (appScreenHeadline) appScreenHeadline.textContent = 'Solo Explorer Route';
+          if (appScreenSubtext) appScreenSubtext.textContent = 'Plan custom routes to Gwalior Fort or Tigra Dam with automated emergency GPS check-ins.';
+          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 Gwalior Fort Sunset Trek • Solo Route</span><strong>GPS Safety Linked</strong>';
           if (vennCircleRiya) {
             vennCircleRiya.querySelector('.venn-avatar').textContent = '🛡️';
             vennCircleRiya.querySelector('.venn-label').textContent = 'Safe';
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // 1-on-1 match
           if (overlapPercentage) overlapPercentage.textContent = '72%';
           if (appScreenHeadline) appScreenHeadline.textContent = 'We match the overlap';
-          if (appScreenSubtext) appScreenSubtext.textContent = 'When your itineraries match 60% or more, you both get matched to split transit & explore.';
-          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 Manali, Himalayas • Oct 24-28</span><strong>₹3,000 / head (÷4 Split)</strong>';
+          if (appScreenSubtext) appScreenSubtext.textContent = 'When your Gwalior outing plans match 60% or more, you both get matched to pool Rapidos & split expenses.';
+          if (plannerSummary) plannerSummary.innerHTML = '<span>📍 Tigra Dam Sunset & Boating • Oct 24</span><strong>₹180 / head (÷2 Split)</strong>';
           if (vennCircleRiya) {
             vennCircleRiya.querySelector('.venn-avatar').textContent = 'R';
             vennCircleRiya.querySelector('.venn-label').textContent = 'Riya';
@@ -137,12 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Bonus: Click overlap badge to cycle matches
+  // Bonus: Click overlap badge to cycle matches in Gwalior
   const sampleMatches = [
-    { pct: '72%', name: 'Riya', initial: 'R', dest: 'Manali, Himalayas', budget: '₹3,000' },
-    { pct: '86%', name: 'Aarav', initial: 'A', dest: 'Spiti Valley Expedition', budget: '₹4,200' },
-    { pct: '94%', name: 'Tanvi', initial: 'T', dest: 'Goa Sunset Coliving', budget: '₹3,500' },
-    { pct: '91%', name: 'Sneha', initial: 'S', dest: 'Campus Chai & Street Food', budget: '₹180' }
+    { pct: '72%', name: 'Riya (MITS)', initial: 'R', dest: 'Tigra Dam Sunset Boating', budget: '₹180' },
+    { pct: '86%', name: 'Aarav (ITM)', initial: 'A', dest: 'Gwalior Fort Urvai Gate Trek', budget: '₹80' },
+    { pct: '94%', name: 'Tanvi (IIITM)', initial: 'T', dest: 'City Center Workation Cafe', budget: '₹150' },
+    { pct: '91%', name: 'Sneha (Jiwaji)', initial: 'S', dest: 'Maharaj Bada & Sarafa Food Walk', budget: '₹120' }
   ];
   let matchIndex = 0;
 
@@ -154,16 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (overlapPercentage) overlapPercentage.textContent = m.pct;
       if (vennCircleRiya) {
         vennCircleRiya.querySelector('.venn-avatar').textContent = m.initial;
-        vennCircleRiya.querySelector('.venn-label').textContent = m.name;
+        vennCircleRiya.querySelector('.venn-label').textContent = m.name.split(' ')[0];
       }
       if (plannerSummary) {
         plannerSummary.innerHTML = `<span>📍 ${m.dest}</span><strong>${m.budget} / head (Split)</strong>`;
       }
-      showToast(`Matched with ${m.name} (${m.pct} overlap)!`, '🤝');
+      showToast(`Matched with ${m.name} (${m.pct} overlap in Gwalior)!`, '🤝');
     });
   }
 
-  // --- 5. Community Outings & Collab Feed (Meetra Feature) ---
+  // --- 5. Community Outings & Collab Feed (Gwalior Localized) ---
   const feedCatChips = document.querySelectorAll('#feedCategoryFilters .filter-chip');
   const feedTimeChips = document.querySelectorAll('#feedTimeFilters .filter-time-chip');
   const outingCards = document.querySelectorAll('.outings-grid .outing-card');
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isBookmarked = btn.classList.toggle('bookmarked');
       if (isBookmarked) {
         savedCount++;
-        showToast('Outing saved to your bookmarks!', '📌');
+        showToast('Gwalior outing saved to your bookmarks!', '📌');
       } else {
         savedCount = Math.max(0, savedCount - 1);
         showToast('Removed from bookmarks.', '🗑️');
@@ -241,10 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
   btnCollabs.forEach(btn => {
     btn.addEventListener('click', () => {
       const host = btn.getAttribute('data-host') || 'Verified Host';
-      const title = btn.getAttribute('data-title') || 'Squad Outing';
+      const title = btn.getAttribute('data-title') || 'Gwalior Squad Outing';
       const match = btn.getAttribute('data-match') || '92%';
-      const cost = btn.getAttribute('data-cost') || '₹450';
-      const hub = btn.getAttribute('data-hub') || 'Departure Hub';
+      const cost = btn.getAttribute('data-cost') || '₹120';
+      const hub = btn.getAttribute('data-hub') || 'MITS Main Gate';
 
       if (collabModalTitle) collabModalTitle.textContent = `Join ${host}'s Squad`;
       if (collabModalMatchScore) collabModalMatchScore.textContent = `${match} Itinerary Overlap`;
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 6. Enhanced Smart Outing & Economics Planner ---
+  // --- 6. Gwalior Smart Outing & Economics Planner ---
   const startLocationSelect = document.getElementById('startLocationSelect');
   const btnGps = document.getElementById('btnGps');
   const gpsStatus = document.getElementById('gpsStatus');
@@ -295,175 +295,159 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnWhatsappShare = document.getElementById('btnWhatsappShare');
   const btnLockPlan = document.getElementById('btnLockPlan');
 
-  // Planner State
+  // Gwalior Planner State
   let currentStart = 'MITS Main Gate';
-  let currentDest = 'manali';
-  let currentDays = 3;
+  let currentDest = 'fort';
+  let currentDays = 1; // 1 = 2-3 hours, 2 = 5 hours, 3 = full day, 4 = 2 days
   let currentCompanion = 'unknown'; // 'solo', 'unknown', 'squad'
   let currentTransit = 'rapido'; // 'rapido', 'auto', 'cab'
 
-  // Trip Database with realistic costs & timelines
+  // Gwalior Database with authentic spots, costs & itineraries
   const tripDatabase = {
-    manali: {
-      name: 'Manali Snow Hike & Solang Valley',
-      destLabel: 'Solang Valley & Old Manali',
-      distance: '14.5 km from ISBT / Hub • 35 mins',
-      costs: { 1: 1500, 3: 12000, 5: 22000, 7: 36000 },
+    fort: {
+      name: 'Gwalior Fort & Man Mandir Palace',
+      destLabel: 'Urvai Gate & Man Mandir Palace',
+      distance: '4.8 km from Campus • ~15 mins transit',
+      costs: { 1: 320, 2: 480, 3: 800, 4: 1200 },
       itineraries: {
         1: [
-          { day: 'Morning', text: 'Rendezvous at departure hub, scenic valley drive & Solang Valley snow walk.' },
-          { day: 'Afternoon', text: 'Cafe hopping in Old Manali, river dip & final expense settlement.' }
+          { day: 'Stop 1 (4:30 PM)', text: 'Meet at MITS Main Gate, share E-Rickshaw / Rapido to Urvai Gate.' },
+          { day: 'Stop 2 (5:15 PM)', text: 'Explore Man Mandir Palace courtyards, ancient rock-cut Jain sculptures.' },
+          { day: 'Stop 3 (6:30 PM)', text: 'Panoramic sunset view over Gwalior city from cliff ramparts & tea check-in.' }
+        ],
+        2: [
+          { day: 'Stop 1 (2:00 PM)', text: 'Rendezvous at pickup hub, head to Gujari Mahal Archaeological Museum.' },
+          { day: 'Stop 2 (4:00 PM)', text: 'Climb through Hathi Pol to Saas Bahu Temple & Teli Ka Mandir.' },
+          { day: 'Stop 3 (6:00 PM)', text: 'Sunset point photography & evening light-and-sound show on the ramparts.' }
         ],
         3: [
-          { day: 'Day 1', text: 'Meet at verified departure hub, scenic mountain drive & check-in to shared mountain stay.' },
-          { day: 'Day 2', text: 'Solang Valley snow trek, local cafe hopping & evening group bonfire unwinding.' },
-          { day: 'Day 3', text: 'Old Manali market exploration, automated expense settlement & journey back.' }
+          { day: 'Morning', text: 'Full historical fort circuit: Urvai Gate, Gwalior Fort Museum, and palaces.' },
+          { day: 'Afternoon', text: 'Traditional Gwalior thali lunch at local partner cafe near fort road.' },
+          { day: 'Evening', text: 'Tomb of Tansen & Mohammad Ghaus, classical music discussion & bill split.' }
         ],
-        5: [
-          { day: 'Day 1-2', text: 'Rendezvous, cross Atal Tunnel into Lahaul valley, explore Sissu waterfalls.' },
-          { day: 'Day 3-4', text: 'Jogini waterfall pine trek, riverside camping & starlit acoustic evening.' },
-          { day: 'Day 5', text: 'Cafe hopping in Vashisht, final group bill split & return journey.' }
-        ],
-        7: [
-          { day: 'Day 1-2', text: 'Arrival & ergonomic workstation check-in with high-speed WiFi setup.' },
-          { day: 'Day 3-5', text: 'Morning productive remote work sprints, afternoon hikes, and local craft visits.' },
-          { day: 'Day 6-7', text: 'Day trek to Hampta Pass base, celebratory group dinner & smooth checkout.' }
+        4: [
+          { day: 'Day 1', text: 'Complete Gwalior Fort palace exploration, photography, and evening bazaar walk.' },
+          { day: 'Day 2', text: 'Sunrise at Gopachal Parvat, morning breakfast crawl, and heritage craft market.' }
         ]
       }
     },
-    goa: {
-      name: 'Goa Sunset Coliving & Scooter Pool',
-      destLabel: 'Anjuna & Vagator Coast',
-      distance: '18.2 km from Airport / Station • 40 mins',
-      costs: { 1: 1800, 3: 14000, 5: 26000, 7: 42000 },
+    tigra: {
+      name: 'Tigra Dam Lake & Boating',
+      destLabel: 'Tigra Dam Reservoir & Water Sports',
+      distance: '18.5 km from City Center • ~35 mins via Bike / Cab',
+      costs: { 1: 720, 2: 960, 3: 1400, 4: 2000 },
       itineraries: {
         1: [
-          { day: 'Afternoon', text: 'Meet at beach road, split rental scooters to Chapora Fort for sunset.' },
-          { day: 'Evening', text: 'Beachside seafood cafe dinner, live music & instant UPI split.' }
+          { day: 'Stop 1 (3:00 PM)', text: 'Meet at City Center / MITS Gate, pool Rapidos or shared cab to Tigra Dam.' },
+          { day: 'Stop 2 (4:00 PM)', text: 'Enjoy speedboat or paddle boating on the reservoir with 10% student pass.' },
+          { day: 'Stop 3 (5:45 PM)', text: 'Sunset lakeside view, pakoras & tea at Tigra Breeze Cafe, auto-split ride back.' }
+        ],
+        2: [
+          { day: 'Afternoon', text: 'Scenic ride through Tigra rocky terrain, speed boating & lake nature photography.' },
+          { day: 'Evening', text: 'Lakeside picnic, acoustic guitar jam by the reservoir water & sunset view.' }
         ],
         3: [
-          { day: 'Day 1', text: 'Meet at Goa transit hub, split rental cabs & check-in to beachside coliving stay.' },
-          { day: 'Day 2', text: 'Shared scooter rentals to Chapora Fort, beach cafe networking & sunset bonfire.' },
-          { day: 'Day 3', text: 'Morning watersports, group brunch bill settlement & airport departure.' }
+          { day: 'Full Day', text: 'Morning bird watching around reservoir outskirts, boat cruise & afternoon camping.' }
         ],
-        5: [
-          { day: 'Day 1-2', text: 'Check-in to coliving villa with high-speed WiFi, beach road sunset cruise.' },
-          { day: 'Day 3-4', text: 'Water sports, secret cove exploration & evening coastal seafood dinners.' },
-          { day: 'Day 5', text: 'Flea market visits, automated split calculation on Trailix & departure.' }
-        ],
-        7: [
-          { day: 'Day 1-3', text: 'Workation kickoff: quiet mornings, high-speed WiFi work, sunset dip in the sea.' },
-          { day: 'Day 4-5', text: 'South Goa heritage trail, spice farm visit & paddleboarding.' },
-          { day: 'Day 6-7', text: 'Beach club networking night, final expense clearing & farewells.' }
-        ]
-      }
-    },
-    rishikesh: {
-      name: 'Rishikesh River Camp & Rafting',
-      destLabel: 'Shivpuri & Beatles Ashram',
-      distance: '21.0 km from Haridwar Hub • 45 mins',
-      costs: { 1: 1200, 3: 9000, 5: 17000, 7: 30000 },
-      itineraries: {
-        1: [
-          { day: 'Morning', text: 'Meet at transit point, 16km white water rafting & cliff jumping.' },
-          { day: 'Evening', text: 'Beatles Ashram sunset stroll, cafe dinner & bill split.' }
-        ],
-        3: [
-          { day: 'Day 1', text: 'Meet at Haridwar transit hub, transfer to riverside campsite & evening aarti.' },
-          { day: 'Day 2', text: '16km White Water River Rafting expedition & cliff jumping adventure.' },
-          { day: 'Day 3', text: 'Beatles Ashram visit, cafe breakfast, seamless bill split & departure.' }
-        ],
-        5: [
-          { day: 'Day 1-2', text: 'Arrival, riverside camping, Ganga Aarti & group rafting coordination.' },
-          { day: 'Day 3-4', text: 'Neer Garh waterfall trek, sunset point hike & live music cafe evening.' },
-          { day: 'Day 5', text: 'Souvenir shopping, expense settlement on Trailix & return trip.' }
-        ],
-        7: [
-          { day: 'Day 1-3', text: 'Peaceful riverside stay, morning yoga/work sessions with valley views.' },
-          { day: 'Day 4-5', text: 'Adrenaline day: Bungee jumping, canyon swings & campfire stories.' },
-          { day: 'Day 6-7', text: 'Trek to Kunjapuri sunrise peak, group photo session & farewell.' }
-        ]
-      }
-    },
-    spiti: {
-      name: 'Spiti Valley 4x4 High-Pass Circuit',
-      destLabel: 'Kaza & Chandra Taal Lake',
-      distance: 'Scenic Mountain Circuit • 4x4 Pool',
-      costs: { 1: 2500, 3: 16000, 5: 28000, 7: 48000 },
-      itineraries: {
-        1: [
-          { day: 'Day Trip', text: 'High altitude mountain drive, pass view point & group fuel division.' }
-        ],
-        3: [
-          { day: 'Day 1', text: 'Meet in Shimla hub, board split 4x4 vehicle & drive to Kinnaur valley.' },
-          { day: 'Day 2', text: 'Scenic high-altitude pass drive, monastery visit & local homestay dinner.' },
-          { day: 'Day 3', text: 'Sunrise valley view, automated fuel & cab split, return journey.' }
-        ],
-        5: [
-          { day: 'Day 1-2', text: 'Scenic mountain climb, Nako lake, Gue mummy monastery & Kaza check-in.' },
-          { day: 'Day 3-4', text: 'Key Monastery, send postcards from Hikkim, Langza fossil hunt.' },
-          { day: 'Day 5', text: 'Chandra Taal lake camping, starry night sky & return drive.' }
-        ],
-        7: [
-          { day: 'Day 1-3', text: 'Full circuit expedition via Kalpa & Tabo, staying at heritage homestays.' },
-          { day: 'Day 4-5', text: 'Kaza exploration, Kibber wildlife sanctuary & high mountain passes.' },
-          { day: 'Day 6-7', text: 'Stargazing at Chandra Taal, 4x4 fuel & expense settlement, back to Manali.' }
+        4: [
+          { day: 'Weekend', text: '2-Day Tigra & Sank River adventure with starlit night camp and bonfire.' }
         ]
       }
     },
     foodtrail: {
-      name: 'Campus Chai & Street Food Trail',
-      destLabel: 'Famous Food Stalls & Night Cafes',
-      distance: '6.4 km circuit • ~20 mins transit',
-      costs: { 1: 600, 3: 1800, 5: 3200, 7: 4500 },
+      name: 'Maharaj Bada & Sarafa Food Trail',
+      destLabel: 'Bada, Naya Bazar & Sarafa Stalls',
+      distance: '5.2 km from Padav • ~18 mins via E-Rickshaw',
+      costs: { 1: 480, 2: 600, 3: 900, 4: 1200 },
       itineraries: {
         1: [
-          { day: 'Stop 1 (5:30 PM)', text: 'Rendezvous at Campus Gate Tapri, hot ginger chai & bun maska.' },
-          { day: 'Stop 2 (6:30 PM)', text: 'Head to street food square: momos, kathi rolls & cold coffee.' },
-          { day: 'Stop 3 (7:30 PM)', text: 'Partner cafe check-in with 20% discount pass & instant auto-split.' }
+          { day: 'Stop 1 (6:00 PM)', text: 'Meet at Padav / Station Hub, share E-Rickshaw to historical Maharaj Bada.' },
+          { day: 'Stop 2 (7:00 PM)', text: 'Famous Gwalior bedai, samosas & kachori tasting in Sarafa Bazar.' },
+          { day: 'Stop 3 (8:30 PM)', text: 'Traditional Morena gajak, rabdi jalebi & instant UPI bill split.' }
+        ],
+        2: [
+          { day: 'Evening', text: 'Victoria Market architecture walk, evening snack crawl across 4 iconic heritage stalls.' }
         ],
         3: [
-          { day: 'Day 1', text: 'Chai tapri meetup & old city evening snack crawl with Rapido pool.' },
-          { day: 'Day 2', text: 'Heritage bakery breakfast, mid-day cafe workation, sunset food street.' },
-          { day: 'Day 3', text: 'Dessert & lassi crawl, automated cost splitting on Trailix.' }
+          { day: 'Full Day', text: 'Morning SS Kachori breakfast, mid-day Lassi crawl, and evening street food square.' }
         ],
-        5: [
-          { day: 'Series', text: 'Complete 5-day culinary exploration across verified local food gems.' }
-        ],
-        7: [
-          { day: 'Series', text: 'Week-long budget food trail with student discount passes.' }
+        4: [
+          { day: 'Weekend', text: 'Deep dive into Gwalior culinary history: Chaat, Bedai, Poha, Sweets, and street cafes.' }
         ]
       }
     },
-    heritage: {
-      name: 'Sunset Fort Heritage & Photo Walk',
-      destLabel: 'Ancient Fort & Sunset Panorama',
-      distance: '8.8 km from Gate • 25 mins transit',
-      costs: { 1: 500, 3: 1500, 5: 2800, 7: 4000 },
+    cafes: {
+      name: 'University Rd & City Center Cafes',
+      destLabel: 'University Rd & Kailash Vihar Hub',
+      distance: '3.6 km circuit • ~12 mins transit',
+      costs: { 1: 400, 2: 560, 3: 800, 4: 1100 },
       itineraries: {
         1: [
-          { day: 'Stop 1 (4:30 PM)', text: 'Meet at MITS Main Gate, share E-Rickshaw to Fort eastern gate.' },
-          { day: 'Stop 2 (5:30 PM)', text: 'Explore palace courtyards, historical architecture & photography.' },
-          { day: 'Stop 3 (6:45 PM)', text: 'Panoramic sunset view from cliff point, tea & return rickshaw split.' }
+          { day: 'Stop 1 (5:30 PM)', text: 'Rendezvous at University Rd Tapri, hot ginger chai & signature bun maska.' },
+          { day: 'Stop 2 (6:45 PM)', text: 'Head to City Center partner cafe for cold coffees & shakes with 20% pass.' },
+          { day: 'Stop 3 (8:00 PM)', text: 'Casual squad chit-chat, exam prep / project brainstorm & bill split.' }
+        ],
+        2: [
+          { day: 'Afternoon', text: 'Remote workation session with high-speed WiFi at Kailash Vihar cafe, evening shake trail.' }
         ],
         3: [
-          { day: 'Day 1', text: 'Fort palace courtyards & evening light-and-sound show.' },
-          { day: 'Day 2', text: 'Museums, ancient stepwells & local handicraft market.' },
-          { day: 'Day 3', text: 'Sunrise tomb walk, breakfast cafe & seamless expense split.' }
+          { day: 'Full Day', text: 'Student cafe hopping across Gwalior university corridor with partner discounts.' }
         ],
-        5: [
-          { day: 'Series', text: 'Comprehensive 5-day regional heritage circuit.' }
+        4: [
+          { day: 'Weekend', text: 'Weekend cafe networking for student developers, creators, and freelancers.' }
+        ]
+      }
+    },
+    mitawali: {
+      name: 'Mitawali & Padavali Ancient Temples',
+      destLabel: 'Chausath Yogini Temple & Bateshwar',
+      distance: '38.0 km from Gwalior • ~50 mins via Cab Pool',
+      costs: { 1: 1400, 2: 1800, 3: 2400, 4: 3200 },
+      itineraries: {
+        1: [
+          { day: 'Morning (8:00 AM)', text: 'Meet at Gwalior Station Hub, board pooled cab to Mitawali circular temple.' },
+          { day: 'Mid-Day (11:00 AM)', text: 'Explore Bateshwar temple complex: 200 ancient sandstone shrines.' },
+          { day: 'Afternoon (2:00 PM)', text: 'Padavali fortress carving study, dhaba lunch & shared fuel split.' }
         ],
-        7: [
-          { day: 'Series', text: 'Week-long architectural documentation and culture expedition.' }
+        2: [
+          { day: 'Half Day', text: 'Detailed architectural photography expedition to Indian Parliament design inspiration.' }
+        ],
+        3: [
+          { day: 'Full Day', text: 'Complete Chambal heritage circuit: Mitawali, Padavali, Bateshwar & Kakanmath.' }
+        ],
+        4: [
+          { day: 'Weekend', text: '2-Day historical documentation and archaeological tour from Gwalior.' }
+        ]
+      }
+    },
+    orchha: {
+      name: 'Orchha Palace Weekend Getaway',
+      destLabel: 'Orchha Fort & Betwa River Sanctuary',
+      distance: '115 km from Gwalior • 2 hrs 30 mins Carpool',
+      costs: { 1: 2200, 2: 3000, 3: 3800, 4: 4800 },
+      itineraries: {
+        1: [
+          { day: 'Day Trip (7:00 AM)', text: 'Depart Gwalior DB Mall hub, highway carpool to Orchha Fort complex.' },
+          { day: 'Afternoon (1:00 PM)', text: 'Raja Mahal fresco tour, Betwa river rafting & local Bundeli lunch.' },
+          { day: 'Evening (6:00 PM)', text: 'Sunset chhatris reflection view, automated fuel & cab split, return drive.' }
+        ],
+        2: [
+          { day: 'Day 1', text: 'Scenic road trip from Gwalior, check into heritage homestay, evening Betwa Aarti.' },
+          { day: 'Day 2', text: 'Jahangir Mahal sunrise, river kayak session, final bill clear & return to Gwalior.' }
+        ],
+        3: [
+          { day: 'Long Trip', text: 'Extended 3-day exploration covering Orchha palaces and Jhansi Fort history.' }
+        ],
+        4: [
+          { day: 'Weekend Stay', text: 'Complete workation retreat with high-speed WiFi stay overlooking Betwa river.' }
         ]
       }
     }
   };
 
   function updatePlannerUI() {
-    const trip = tripDatabase[currentDest] || tripDatabase.manali;
-    const baseCost = (trip.costs && trip.costs[currentDays]) || 12000;
+    const trip = tripDatabase[currentDest] || tripDatabase.fort;
+    const baseCost = (trip.costs && trip.costs[currentDays]) || 320;
     const travelers = parseInt(travelersRange ? travelersRange.value : '4', 10);
     
     if (travelersCount) {
@@ -492,7 +476,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Title & Description
     if (itineraryTitle) {
-      const daysText = currentDays === 1 ? 'Quick Outing' : `${currentDays} Days`;
+      const timeNames = {
+        1: '2-3 Hours',
+        2: '5 Hours',
+        3: 'Full Day',
+        4: '2 Days'
+      };
+      const daysText = timeNames[currentDays] || 'Outing';
       itineraryTitle.textContent = `${trip.name} (${daysText})`;
     }
 
@@ -503,31 +493,31 @@ document.addEventListener('DOMContentLoaded', () => {
         itineraryModeBadge.style.color = '#1E40AF';
       }
       if (itineraryDesc) {
-        itineraryDesc.textContent = `Custom solo itinerary with automatic emergency contact check-ins, optimized stops, and verified meeting hubs.`;
+        itineraryDesc.textContent = `Custom solo Gwalior itinerary with automatic emergency contact check-ins, optimized stops, and verified meeting hubs.`;
       }
     } else if (currentCompanion === 'squad') {
       if (itineraryModeBadge) {
-        itineraryModeBadge.textContent = '👥 Squad Outing (÷4 Group Auto-Split)';
+        itineraryModeBadge.textContent = '👥 Gwalior Squad (÷4 Group Auto-Split)';
         itineraryModeBadge.style.color = '#0284C7';
       }
       if (itineraryDesc) {
-        itineraryDesc.textContent = `Squad command plan for ${trip.name}. Split cabs, homestays, and meals 4 ways with live UPI settlement.`;
+        itineraryDesc.textContent = `Squad plan for ${trip.name}. Split Gwalior autos/cabs and food bills 4 ways with live UPI settlement.`;
       }
     } else {
       // 1-on-1 match
       if (itineraryModeBadge) {
-        itineraryModeBadge.textContent = '🤝 Matching Verified Explorers (60%+ Overlap)';
+        itineraryModeBadge.textContent = '🤝 Matching Verified Gwalior Explorers (60%+ Overlap)';
         itineraryModeBadge.style.color = '#243B6B';
       }
       if (itineraryDesc) {
-        itineraryDesc.textContent = `Trailix matches you with a verified co-traveler heading to ${trip.name} during your exact window. Split transit & make lifelong friends.`;
+        itineraryDesc.textContent = `Trailix matches you with a verified Gwalior student heading to ${trip.name} during your exact window. Split transit & make campus friends.`;
       }
     }
 
     // Transit Pill on Route Map
     const transitNames = {
       rapido: '🛵 Rapido / Bike Pool',
-      auto: '🛺 E-Rickshaw Share',
+      auto: '🛺 Gwalior E-Rickshaw',
       cab: '🚙 Shared Cab Pool'
     };
     if (routeModeTag) routeModeTag.textContent = transitNames[currentTransit] || '🛵 Rapido Pool';
@@ -540,10 +530,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Render Timeline stops
-    const daysData = (trip.itineraries && (trip.itineraries[currentDays] || trip.itineraries[3])) || [
-      { day: 'Day 1', text: 'Meet at departure hub, split cabs & check into stay.' },
-      { day: 'Day 2', text: 'Main sightseeing & shared group activities.' },
-      { day: 'Day 3', text: 'Local markets, automated expense split & journey home.' }
+    const daysData = (trip.itineraries && (trip.itineraries[currentDays] || trip.itineraries[1])) || [
+      { day: 'Stop 1', text: 'Meet at Gwalior departure hub, pool E-Rickshaw / Rapido.' },
+      { day: 'Stop 2', text: 'Main sightseeing & shared activities.' },
+      { day: 'Stop 3', text: 'Cafe check-in, automated expense split & journey home.' }
     ];
 
     if (itineraryTimeline) {
@@ -564,19 +554,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // GPS Button (Meetra feature)
+  // GPS Button (Gwalior Coordinates)
   if (btnGps) {
     btnGps.addEventListener('click', () => {
       btnGps.classList.toggle('active');
       const isActive = btnGps.classList.contains('active');
       if (isActive) {
-        currentStart = '📍 Current GPS Location';
+        currentStart = '📍 Current Gwalior GPS Location';
         if (gpsStatus) gpsStatus.classList.add('visible');
-        showToast('GPS linked! Using your current coordinates.', '📍');
+        showToast('GPS linked in Gwalior (26.2183° N, 78.1828° E)!', '📍');
       } else {
         currentStart = startLocationSelect ? startLocationSelect.value : 'MITS Main Gate';
         if (gpsStatus) gpsStatus.classList.remove('visible');
-        showToast('Reverted to selected campus hub.', '🏫');
+        showToast('Reverted to selected Gwalior hub.', '🏫');
       }
       updatePlannerUI();
     });
@@ -648,14 +638,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial planner update
   updatePlannerUI();
 
-  // WhatsApp Share Button
+  // WhatsApp Share Button (Gwalior formatted)
   if (btnWhatsappShare) {
     btnWhatsappShare.addEventListener('click', () => {
-      const trip = tripDatabase[currentDest] || tripDatabase.manali;
-      const sharePrice = sharedCostDisplay ? sharedCostDisplay.textContent : '₹3,000';
-      const text = encodeURIComponent(`Hey! I just planned an outing to ${trip.name} on Trailix! We can pool transit via ${currentTransit === 'rapido' ? 'Rapido' : 'Shared Cab'} and our share is just ${sharePrice}/head. Join the squad: https://mayankkumar272004-cmd.github.io/trailix_v.0/`);
+      const trip = tripDatabase[currentDest] || tripDatabase.fort;
+      const sharePrice = sharedCostDisplay ? sharedCostDisplay.textContent : '₹80';
+      const transitText = currentTransit === 'rapido' ? 'Rapido Bike Pool' : (currentTransit === 'auto' ? 'E-Rickshaw Share' : 'Shared Cab');
+      const text = encodeURIComponent(`Hey! I just planned a Gwalior outing to ${trip.name} on Trailix! We can pool transit via ${transitText} from ${currentStart} and our share is just ${sharePrice}/head. Let's squad up: https://mayankkumar272004-cmd.github.io/trailix_v.0/`);
       window.open(`https://wa.me/?text=${text}`, '_blank');
-      showToast('Opening WhatsApp to share with your squad!', '💬');
+      showToast('Opening WhatsApp to share with your Gwalior squad!', '💬');
     });
   }
 
@@ -669,16 +660,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnLockPlan) {
     btnLockPlan.addEventListener('click', () => {
-      const trip = tripDatabase[currentDest] || tripDatabase.manali;
-      const sharePrice = sharedCostDisplay ? sharedCostDisplay.textContent : '₹3,000';
+      const trip = tripDatabase[currentDest] || tripDatabase.fort;
+      const sharePrice = sharedCostDisplay ? sharedCostDisplay.textContent : '₹80';
       const travelers = travelersRange ? travelersRange.value : 4;
 
       if (lockModalHub) lockModalHub.textContent = currentStart;
       if (lockModalDetails) lockModalDetails.textContent = `${trip.name} • ${travelers} Travelers • ${sharePrice} / head`;
-      if (lockModalTransit) lockModalTransit.textContent = currentTransit === 'rapido' ? '🛵 Rapido Pool' : (currentTransit === 'auto' ? '🛺 E-Rickshaw' : '🚙 Shared Cab');
+      if (lockModalTransit) lockModalTransit.textContent = currentTransit === 'rapido' ? '🛵 Rapido Pool' : (currentTransit === 'auto' ? '🛺 Gwalior E-Rickshaw' : '🚙 Shared Cab');
 
       if (lockModal) lockModal.classList.add('active');
-      showToast('Plan locked & squad room ready!', '🔒');
+      showToast('Plan locked & Gwalior squad room ready!', '🔒');
     });
   }
 
@@ -695,7 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 7. Partner Spots & Digital Pass Modal (Meetra Feature) ---
+  // --- 7. Gwalior Partner Spots & Digital Pass Modal ---
   const bookingModal = document.getElementById('bookingModal');
   const closeBookingModal = document.getElementById('closeBookingModal');
   const btnConfirmPass = document.getElementById('btnConfirmPass');
@@ -712,11 +703,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentPartySize = '2 Guests';
   let currentTimeSlot = '6:00 PM';
-  let currentVenueDiscount = '15% Off';
+  let currentVenueDiscount = '15% Off Total Bill';
 
   reserveSlotBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const venue = btn.getAttribute('data-venue') || 'Partner Cafe';
+      const venue = btn.getAttribute('data-venue') || 'Gwalior Partner Cafe';
       currentVenueDiscount = btn.getAttribute('data-discount') || '15% Off';
 
       if (passVenueName) passVenueName.textContent = venue;
@@ -763,11 +754,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnConfirmPass) {
     btnConfirmPass.addEventListener('click', () => {
       hideBookingModal();
-      showToast('Digital pass saved! Show PIN on arrival.', '🎟️');
+      showToast('Gwalior digital pass saved! Show PIN on arrival.', '🎟️');
     });
   }
 
-  // --- 8. Pre-Trip Squad Lounge Interactive Chat (Meetra Feature) ---
+  // --- 8. Pre-Trip Squad Lounge Interactive Chat (Gwalior Localized) ---
   const chatMessagesBody = document.getElementById('chatMessagesBody');
   const chatInputForm = document.getElementById('chatInputForm');
   const chatTextInput = document.getElementById('chatTextInput');
@@ -793,12 +784,12 @@ document.addEventListener('DOMContentLoaded', () => {
       appendChatMessage(text, 'me');
       chatTextInput.value = '';
 
-      // Simulated smart peer response
+      // Simulated smart peer response from Riya Sharma (MITS)
       setTimeout(() => {
         const responses = [
-          "Perfect! Checked the route, I'll meet you right on time.",
-          "Awesome, let's auto-split fuel on Trailix after we reach!",
-          "Got it! I've packed light. See you at the departure gate! 🚀"
+          "Perfect! I'll be at MITS Main Gate at 3:30 PM sharp. Rapido confirmed!",
+          "Sounds great! After Tigra Dam sunset, let's grab coffee on University Rd with our pass.",
+          "Awesome! Packed my camera for the fort sunset. See you at the gate! 🚀"
         ];
         const randomResp = responses[Math.floor(Math.random() * responses.length)];
         appendChatMessage(randomResp, 'peer');
@@ -811,12 +802,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = btn.getAttribute('data-msg');
       if (msg) {
         appendChatMessage(msg, 'me');
-        showToast('Message sent to squad!', '💬');
+        showToast('Message sent to Gwalior squad!', '💬');
       }
     });
   });
 
-  // --- 9. Two-Way Peer Rating & Endorsements Modal (Meetra Feature) ---
+  // --- 9. Two-Way Peer Rating & Endorsements Modal ---
   const ratingModal = document.getElementById('ratingModal');
   const closeRatingModal = document.getElementById('closeRatingModal');
   const btnOpenRateModal = document.getElementById('btnOpenRateModal');
@@ -860,7 +851,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnSubmitRating) {
     btnSubmitRating.addEventListener('click', () => {
       hideRatingModal();
-      showToast('⭐ Peer endorsement submitted! Trust score updated.', '🎉');
+      showToast("⭐ Peer endorsement submitted! Riya's Gwalior trust score updated to 4.9/5.0.", '🎉');
     });
   }
 
@@ -911,10 +902,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('userName').value.trim();
       const email = document.getElementById('userEmail').value.trim();
       const roleElem = document.querySelector('input[name="userRole"]:checked');
-      const role = roleElem ? roleElem.value : 'explorer';
+      const role = roleElem ? roleElem.value : 'gwalior_student';
       const timestamp = new Date().toLocaleString('en-IN');
 
-      const subscriberData = { name, email, role, date: timestamp };
+      const subscriberData = { name, email, role, city: 'Gwalior', date: timestamp };
 
       // 1. Always save a local copy
       try {
@@ -928,7 +919,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // UI: Loading state
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Saving your spot...</span>`;
+      submitBtn.innerHTML = `<span>Saving your Gwalior spot...</span>`;
 
       // 2. Send to Google Sheets if API URL is configured
       if (GOOGLE_SHEET_API_URL && GOOGLE_SHEET_API_URL.trim() !== '') {
@@ -949,11 +940,11 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = originalBtnHtml;
 
       if (successMessage) {
-        successMessage.textContent = `Thank you, ${name}! We've reserved your priority early access badge for ${email}. You will receive your personal onboarding invite soon.`;
+        successMessage.textContent = `Thank you, ${name}! We've reserved your priority Gwalior early access badge for ${email}. You will receive your onboarding invite soon.`;
       }
       waitlistForm.style.display = 'none';
       if (waitlistSuccess) waitlistSuccess.style.display = 'block';
-      showToast('Early access spot reserved!', '🎉');
+      showToast('Gwalior early access spot reserved!', '🎉');
     });
 
     if (resetWaitlistBtn) {
